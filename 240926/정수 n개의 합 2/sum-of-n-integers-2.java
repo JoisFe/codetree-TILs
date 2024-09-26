@@ -21,10 +21,10 @@ public class Main {
             sumNums[i] = sumNums[i - 1] + nums[i];
         }
 
+        // sumNums(k - 1)
         int answer = sumNums[k - 1];
 
         for (int i = 0; i < n - k - 1; ++i) {
-            // sumNums(k - 1)
             // sumNums(k) - sumNums(0)
             // sumNums(k + 1) - sumNums(1) 
             // sumNums(k + 2) - sumNums(2)

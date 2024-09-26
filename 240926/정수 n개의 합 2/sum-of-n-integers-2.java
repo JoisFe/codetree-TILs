@@ -23,8 +23,8 @@ public class Main {
 
         int answer = Integer.MIN_VALUE;
 
-        for (int i = 0; i < n - k; ++i) {
-            answer = Math.max(answer, sumNums[k + i + 1] - sumNums[i]);
+        for (int i = 0; i < n - k - 1; ++i) {
+            answer = Math.max(answer, sumNums[k + i] - sumNums[i]);
         }
 
         System.out.println(answer);

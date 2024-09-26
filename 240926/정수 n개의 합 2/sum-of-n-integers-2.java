@@ -21,9 +21,13 @@ public class Main {
             sumNums[i] = sumNums[i - 1] + nums[i];
         }
 
-        int answer = Integer.MIN_VALUE;
+        int answer = sumNums[k - 1];
 
         for (int i = 0; i < n - k - 1; ++i) {
+            // sumNums(k - 1)
+            // sumNums(k) - sumNums(0)
+            // sumNums(k + 1) - sumNums(1) 
+            // sumNums(k + 2) - sumNums(2)
             answer = Math.max(answer, sumNums[k + i] - sumNums[i]);
         }
 

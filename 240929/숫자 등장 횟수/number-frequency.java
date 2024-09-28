@@ -20,8 +20,8 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         for (int i = 0; i < m; ++i) {
             bw.write(map.getOrDefault(Integer.parseInt(st.nextToken()), 0) + " ");
-            bw.flush();
         }
+        bw.flush();
         bw.close();
     }
 }

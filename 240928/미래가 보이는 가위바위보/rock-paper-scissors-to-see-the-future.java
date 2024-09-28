@@ -6,7 +6,7 @@ public class Main {
 
         int n = sc.nextInt();
 
-        char[] rockScissorsPapers = {'R', 'S', 'P'};
+        char[] rockScissorsPapers = {'H', 'S', 'P'};
         char[] arr = new char[n];
 
         for (int i = 0; i < n; ++i) {
@@ -20,6 +20,7 @@ public class Main {
             int cnt = 0;
 
             for (int j = 0; j < n; ++j) {
+                // 비기는 경우가 아니라 ex) 묵이랑 같은케이스가 사실 빠인것임 (묵을 이기는 케이스)
                 if (arr[j] == rockScissorsPapers[i]) {
                     ++cnt;
                 }

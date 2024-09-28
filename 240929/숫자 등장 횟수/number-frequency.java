@@ -17,8 +17,11 @@ public class Main {
         }
 
         st = new StringTokenizer(br.readLine());
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         for (int i = 0; i < m; ++i) {
-            System.out.print(map.getOrDefault(Integer.parseInt(st.nextToken()), 0) + " ");
+            bw.write(map.getOrDefault(Integer.parseInt(st.nextToken()), 0) + " ");
+            bw.flush();
         }
+        bw.close();
     }
 }

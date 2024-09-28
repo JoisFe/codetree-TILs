@@ -1,15 +1,18 @@
+import java.io.*;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st.nextToken());
 
         Coordinate[] coordinates = new Coordinate[n];
 
         for (int i = 0; i < n; ++i) {
-            int x = sc.nextInt();
-            int y = sc.nextInt();
+            st = new StringTokenizer(br.readLine());
+            int x = Integer.parseInt(st.nextToken());
+            int y = Integer.parseInt(st.nextToken());
             coordinates[i] = new Coordinate(y, x);
         }
 
@@ -30,7 +33,11 @@ public class Main {
             minDistance = Math.min(minDistance, lDist[i - 1] + rDist[i + 1] + getDistance(i -1, i + 1, coordinates));
         }
 
-        System.out.println(minDistance);
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        bw.write(String.valueOf(minDistance));
+        bw.newLine();
+        bw.flush();
+        bw.close();
     }
 
     static int getDistance(int idx1, int idx2, Coordinate[] coordinates) {

@@ -38,6 +38,7 @@ public class Main {
         bw.newLine();
         bw.flush();
         bw.close();
+        br.close();
     }
 
     static int getDistance(int idx1, int idx2, Coordinate[] coordinates) {

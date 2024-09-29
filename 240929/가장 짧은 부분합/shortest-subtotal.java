@@ -13,21 +13,20 @@ public class Main {
             arr[i] = sc.nextInt();
         }
 
-        int sum = 0;
-        int j = 0;
         int answer = Integer.MAX_VALUE;
-
+        
         for (int i = 0; i < n; ++i) {
-            while (j < n && sum < s) {
+            int sum = 0;
+            
+            for (int j = i; j < n; ++j) {
                 sum += arr[j];
-                ++j;
-            }
 
-            if (sum < s) {
-                break;
-            }
+                if (sum >= s) {
+                    answer = Math.min(answer, j - i + 1);
 
-            answer = Math.min(answer, j - 1 - i + 1);
+                    break;
+                }
+            }
 
             sum -= arr[i];
         }
@@ -35,6 +34,7 @@ public class Main {
         if (answer == Integer.MAX_VALUE) {
             answer = -1;
         }
+
         System.out.println(answer);
     }
 }

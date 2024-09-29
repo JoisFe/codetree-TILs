@@ -27,7 +27,7 @@ public class Main {
                 break;
             }
 
-            answer = Math.max(answer, j - i + 1);
+            answer = Math.min(answer, j - i + 1);
 
             sum -= arr[i];
         }

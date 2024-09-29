@@ -23,7 +23,7 @@ public class Main {
                 ++j;
             }
 
-            answer = Math.min(answer, j - i + 1);
+            answer = Math.max(answer, j - 1 - i + 1);
 
             sum -= arr[i];
         }

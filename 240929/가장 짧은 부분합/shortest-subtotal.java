@@ -23,9 +23,7 @@ public class Main {
                 ++j;
             }
 
-            if (sum < s) {
-                break;
-            }
+        
 
             answer = Math.min(answer, j - 1 - i + 1);
 

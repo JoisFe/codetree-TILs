@@ -32,6 +32,9 @@ public class Main {
             sum -= arr[i];
         }
 
+        if (answer == Integer.MAX_VALUE) {
+            answer = -1;
+        }
         System.out.println(answer);
     }
 }

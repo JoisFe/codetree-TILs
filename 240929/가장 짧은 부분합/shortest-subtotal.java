@@ -18,7 +18,7 @@ public class Main {
         int answer = Integer.MAX_VALUE;
 
         for (int i = 0; i < n; ++i) {
-            while (j < n && sum + arr[j] <= s) {
+            while (j < n && sum < s) {
                 sum += arr[j];
                 ++j;
             }
@@ -27,7 +27,7 @@ public class Main {
                 break;
             }
 
-            answer = Math.min(answer, j - i + 1);
+            answer = Math.min(answer, j - 1 - i + 1);
 
             sum -= arr[i];
         }

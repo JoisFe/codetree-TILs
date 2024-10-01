@@ -32,7 +32,7 @@ public class Main {
 
             existNumArray[nums[i]] = false;
 
-        maxLen = Math.max(maxLen, j - 1 - i + 1);
+            maxLen = Math.max(maxLen, (j - 1) - i + 1);
         }
 
         System.out.println(maxLen);

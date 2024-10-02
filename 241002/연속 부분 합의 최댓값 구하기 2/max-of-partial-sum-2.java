@@ -18,10 +18,9 @@ public class Main {
         for (int i = 0; i < n; ++i) {
             if (sum < 0) {
                 sum = nums[i];
-                continue;
+            } else {
+                sum += nums[i];
             }
-
-            sum += nums[i];
 
             answer = Math.max(answer, sum);
         }

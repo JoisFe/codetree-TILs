@@ -20,7 +20,7 @@ public class Main {
 
         int index = 0;
 
-        while (m > 0) {
+        while (m > 0 && index < jewelries.size()) {
             int weight = jewelries.get(index).getWeight();
             int price = jewelries.get(index).getPrice();
             double unitPrice = jewelries.get(index).getUnitPrice();

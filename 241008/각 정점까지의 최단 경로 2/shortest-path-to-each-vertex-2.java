@@ -21,7 +21,11 @@ public class Main {
         }
 
         for (int i = 0; i < m; ++i) {
-            map[sc.nextInt()][sc.nextInt()] = sc.nextInt();
+            int start = sc.nextInt();
+            int end = sc.nextInt();
+            int dist = sc.nextInt();
+            
+            map[start][end] = Math.min(map[start][end], dist);
         }
 
         for (int mid = 1; mid <= n; ++mid) {

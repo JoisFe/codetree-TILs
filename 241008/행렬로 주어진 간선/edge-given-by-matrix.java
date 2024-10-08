@@ -14,26 +14,30 @@ public class Main {
             }
         }
 
-    for (int mid = 0; mid < n; ++mid) {
         for (int i = 0; i < n; ++i) {
-            for (int j = 0; j < n; ++j) {
-                if (map[i][j] == 1) {
-                    continue;
-                }
+            map[i][i] = 1;
+        }
 
-                if (map[i][mid] == 1 && map[mid][j] == 1) {
-                    map[i][j] = 1;
+        for (int mid = 0; mid < n; ++mid) {
+            for (int i = 0; i < n; ++i) {
+                for (int j = 0; j < n; ++j) {
+                    if (map[i][j] == 1) {
+                        continue;
+                    }
+
+                    if (map[i][mid] == 1 && map[mid][j] == 1) {
+                        map[i][j] = 1;
+                    }
                 }
             }
         }
-    }
 
-    for (int i = 0; i < n; ++i) {
-        for (int j = 0; j < n; ++j) {
-            System.out.print(map[i][j] + " ");
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < n; ++j) {
+                System.out.print(map[i][j] + " ");
+            }
+            System.out.println();
         }
-        System.out.println();
-    }
 
     }
 }

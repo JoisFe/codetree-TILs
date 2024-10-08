@@ -11,10 +11,7 @@ public class Main {
         Map<Integer, Integer> map = new HashMap<>();
 
         for (int i = 0; i < n; ++i) {
-            int num = sc.nextInt();
-            
-            nums[i] = num;
-            map.compute(num, (key, value) -> value == null ? 1 : ++value);
+            nums[i] = sc.nextInt();
         }
 
         int answer = 0;
@@ -25,8 +22,10 @@ public class Main {
             if (map.containsKey(diffNum)) {
                 answer += map.get(diffNum);
             } 
+
+            map.compute(nums[i], (key, value) -> value == null ? 1 : ++value);
         }
 
-        System.out.println(answer / 2);
+        System.out.println(answer);
     }
 }

@@ -7,32 +7,26 @@ public class Main {
         int n = sc.nextInt();
         int k = sc.nextInt();
 
-        int[] nums = new int[n];
+        int nums[] = new int[n];
+        Map<Integer, Integer> map = new HashMap<>();
 
         for (int i = 0; i < n; ++i) {
-            nums[i] = sc.nextInt();
+            int num = sc.nextInt();
+            
+            nums[i] = num;
+            map.compute(num, (key, value) -> value == null ? 1 : ++value);
         }
-
-        Arrays.sort(nums);
-
-        int leftIdx = 0;
-        int rightIdx = nums.length - 1;
 
         int answer = 0;
 
-        while (leftIdx < rightIdx) {
-            int sum = nums[leftIdx] + nums[rightIdx];
+        for (int i = 0; i < n; ++i) {
+            int diffNum = k - nums[i];
 
-            if (sum == k) {
-                ++answer;
-                ++leftIdx;
-            } else if (sum > k) {
-                --rightIdx;
-            } else {
-                ++leftIdx;
-            }
+            if (map.containsKey(diffNum)) {
+                answer += map.get(diffNum);
+            } 
         }
 
-        System.out.println(answer);
+        System.out.println(answer / 2);
     }
 }

@@ -1,11 +1,15 @@
 import java.util.*;
+import java.io.*;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BuffredReader br = new BuffredReader(new InputStreamReader(System.in));
+        BuffredWriter bw = new BuffredWriter(new OutputStreamWriter(System.out));
 
-        int n = sc.nextInt();
-        int k = sc.nextInt();
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int n = Integer.parseInt(st.nextToken());
+        int k = Integer.parseInt(st.nextToken());
 
         Set[] personSet = new Set[n + 1];
         int[][] changes = new int[k * 3][2];
@@ -21,8 +25,10 @@ public class Main {
         }
 
         for (int i = 0; i < k; ++i) {
-            changes[i][0] = sc.nextInt();
-            changes[i][1] = sc.nextInt();
+            st = new StringTokenizer(br.readLine());
+            
+            changes[i][0] = Integer.parseInt(st.nextToken());
+            changes[i][1] = Integer.parseInt(st.nextToken());
         }
 
         for (int i = 0; i < k; ++i) {
@@ -43,7 +49,10 @@ public class Main {
         }
 
         for (int i = 1; i <= n; ++i) {
-            System.out.println(personSet[i].size());
+            bw.write(personSet[i].size() + "\n");
         }
+
+        bw.flush();
+        bw.close();
     }
 }

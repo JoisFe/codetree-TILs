@@ -10,25 +10,33 @@ public class Main {
         Set<Integer> set = new HashSet<>();
         set.add(1);
 
-        for (int i = 0; i < g; ++i) {
-            int cnt = sc.nextInt();
+        while (true) {
+            int setSize = set.size();
 
-            int idxSize = cnt;
-            int uniqueNum = -1;
+            for (int i = 0; i < g; ++i) {
+                int cnt = sc.nextInt();
 
-            for (int j = 0; j < idxSize; ++j) {
-                int num = sc.nextInt();
+                int idxSize = cnt;
+                int uniqueNum = -1;
 
-                if (set.contains(num)) {
-                    --cnt;
-                    continue;
+                for (int j = 0; j < idxSize; ++j) {
+                    int num = sc.nextInt();
+
+                    if (set.contains(num)) {
+                        --cnt;
+                        continue;
+                    }
+
+                    uniqueNum = num;
                 }
 
-                uniqueNum = num;
+                if (cnt == 1) {
+                    set.add(uniqueNum);
+                }
             }
 
-            if (cnt == 1) {
-                set.add(uniqueNum);
+            if (setSize == set.size()) {
+                break;
             }
         }
 

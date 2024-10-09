@@ -19,6 +19,8 @@ public class Main {
             set.add(sc.nextInt());
         }
 
-        System.out.println(sum - set.size());
+        int intersectionSize = sum - set.size();
+
+        System.out.println((a - intersectionSize) + (b - intersectionSize));
     }
 }

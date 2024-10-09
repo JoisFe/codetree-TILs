@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         int n = Integer.parseInt(st.nextToken());
 
@@ -19,9 +20,9 @@ public class Main {
             switch(cmd) {
                 case "find" : 
                     if (set.contains(num)) {
-                        System.out.println("true");
+                        bw.write("true\n");
                     } else {
-                        System.out.println("false");
+                        bw.write("false\n");
                     }
 
                     break;
@@ -33,5 +34,8 @@ public class Main {
                     break;
             }
         }
+
+        bw.flush();
+        bw.close();
     }
 }

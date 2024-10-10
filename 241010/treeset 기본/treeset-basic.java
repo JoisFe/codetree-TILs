@@ -33,11 +33,19 @@ public class Main {
                     break;
                 case "lower_bound":
                     num = Integer.parseInt(st.nextToken());
-                    System.out.println(Optional.ofNullable(String.valueOf(((TreeSet<Integer>) set).ceiling(num))).orElse("None"));
+                    if ((((TreeSet<Integer>) set).ceiling(num)) == null) {
+                        System.out.println("None");
+                    } else {
+                        System.out.println(((TreeSet<Integer>) set).ceiling(num));
+                    }
                     break;
                 case "upper_bound":
                     num = Integer.parseInt(st.nextToken());
-                    System.out.println(Optional.ofNullable(String.valueOf(((TreeSet<Integer>) set).higher(num))).orElse("None"));
+                    if ((((TreeSet<Integer>) set).higher(num)) == null) {
+                        System.out.println("None");
+                    } else {
+                        System.out.println(((TreeSet<Integer>) set).higher(num));
+                    }
                     break;
                 case "largest":
                     // System.out.println(Optional.ofNullable(String.valueOf(((TreeSet<Integer>) set).last())).orElse("None"));

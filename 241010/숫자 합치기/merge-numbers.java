@@ -6,31 +6,22 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
-        List<Integer> nums = new ArrayList<>();
+        Queue<Integer> pq = new PriorityQueue<>();
 
         for (int i = 0; i < n; ++i) {
-            nums.add(sc.nextInt());
+            pq.offer(sc.nextInt());
         }
 
         int answer = 0;
 
-        while (true) {
-            if (nums.size() == 1) {
-                break;
-            }
-
-            nums = nums.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
-
-            int num1 = nums.get(nums.size() - 1);
-            nums.remove(nums.size() - 1);
-            int num2 = nums.get(nums.size() - 1);
-            nums.remove(nums.size() - 1);
+        while (pq.size() > 1) {
+            int num1 = pq.poll();
+            int num2 = pq.poll();
 
             int cost = num1 + num2;
 
-            nums.add(cost);
+            pq.offer(cost);
             answer += cost;
-
         }
 
         System.out.println(answer);

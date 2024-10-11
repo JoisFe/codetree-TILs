@@ -14,7 +14,7 @@ public class Main {
         }
 
         for (int i = 0; i < m; ++i) {
-            System.out.println(Optional.ofNullable(coordinateSet.higher(new Coordinate(sc.nextInt(), sc.nextInt()))).orElse(new Coordinate(-1, -1)));
+            System.out.println(Optional.ofNullable(coordinateSet.ceiling(new Coordinate(sc.nextInt(), sc.nextInt()))).orElse(new Coordinate(-1, -1)));
         }
     }
 }

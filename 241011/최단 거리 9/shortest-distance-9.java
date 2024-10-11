@@ -22,7 +22,12 @@ public class Main {
         Arrays.fill(dist, INF);
 
         for (int i = 0; i < m; ++i) {
-            graph.get(sc.nextInt()).add(new Node(sc.nextInt(), sc.nextInt()));
+            int node1 = sc.nextInt();
+            int node2 = sc.nextInt();
+            int distance = sc.nextInt();
+            
+            graph.get(node1).add(new Node(node2, distance));
+            graph.get(node2).add(new Node(node1, distance));
         }
 
         int start = sc.nextInt();
